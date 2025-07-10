@@ -1171,7 +1171,7 @@ const ctx = canvas.getContext("2d");
 let stars = [];
 const numStars = 500;
 let w, h;
-const speed = 3;
+const speed = 1;
 
 function resize() {
   w = canvas.width = window.innerWidth;
@@ -1192,7 +1192,7 @@ class Star {
   }
 
   update(delta) {
-    this.z -= speed * delta * 20; // ← 더 느리게 하고 싶으면 20을 줄이기
+    this.z -= speed * delta * 10; // ← 더 느리게 하고 싶으면 20을 줄이기
     if (this.z < 1) this.reset();
   }
 
@@ -1209,7 +1209,8 @@ class Star {
     ctx.beginPath();
     ctx.arc(sx, sy, r, 0, Math.PI * 2);
     const hue = Math.random() * 360;
-    ctx.fillStyle = `hsla(${hue}, 100%, 70%, 0.8)`;
+    ctx.fillStyle = `rgba(199, 191, 255, 0.8)`;
+      /* hsla(${hue}, 100%, 70%, 0.8) */
     ctx.fill();
   }
 }
