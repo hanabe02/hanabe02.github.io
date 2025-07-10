@@ -73,23 +73,44 @@
         } */
 
         /* 네비게이션 */
-        .nav {
+/*         .nav {
           display: flex;
-          justify-content: flex-end;  /* 내부 요소를 오른쪽으로 */
+          justify-content: flex-end;  
           align-items: center;
           margin-top: 20px;
-          width: 100vw;               /* 전체 화면 너비 사용 */
-          background-color: black;    /* 배경색 설정 (예시) */
-          padding: 0;                 /* 혹시라도 기본 패딩 제거 */
-          box-sizing: border-box;     /* 패딩 포함 너비 처리 */
-        }
-        .nav-links {
+          width: 100vw;               
+          background-color: black;    
+          padding: 0;                 
+          box-sizing: border-box;     
+        } */
+/*         .nav-links {
           display: flex;
-          flex-direction: row; /* 이걸 꼭 추가해줘야 함! */
+          flex-direction: row; 
           gap: 40px;
           height: 100%;
           align-items: center;
           justify-content: center;
+        } */
+        
+        .nav {
+            display: flex;
+            justify-content: space-between; /* 로고와 링크 그룹을 양 끝으로 벌림 */
+            align-items: center;
+            margin-top: 20px;
+            width: 100vw;
+            background-color: black; /* 배경색 설정 (예시) */
+            padding: 0 50px; /* 양쪽에 여백을 줘서 끝에 너무 붙지 않도록 (필요에 따라 조절) */
+            box-sizing: border-box;
+            height: 70px; /* 이미지에서 nav의 높이가 70px로 보이는 것을 고려하여 추가 */
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row; /* 이미 설정되어 있음 */
+            gap: 40px;
+            /* height: 100%; 이건 필요하면 유지, 아니면 제거 */
+            align-items: center; /* 세로 중앙 정렬 */
+            /* justify-content: center; 이건 제거, .nav에서 space-between으로 처리 */
         }
 
         .nav-section.center {
@@ -113,30 +134,53 @@
           justify-content: flex-end;
         }
 
-        .logo {
-          font-size: 2.0rem; /* 기존보다 키움 */
+/*         .logo {
+          font-size: 2.0rem; 
           font-weight: 700;
           background: linear-gradient(to right, #c7bfff, #e6d6ff);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           cursor: pointer;
-          margin-left: 50px; /* ← 이거 추가해서 오른쪽으로 이동 */
+          margin-left: 50px; 
+        } */
+        
+        .logo {
+            font-size: 2.0rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #c7bfff, #e6d6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            /* margin-left: 50px; 이 부분은 .nav의 padding으로 대체하거나, 필요하면 유지 */
         }
 
-        .nav-link {
+/*         .nav-link {
           color: var(--text-primary);
           text-decoration: none;
           font-weight: 600;
           position: relative;
-          font-size: 1.5rem; /* ← 기존보다 살짝 키움 */
+          font-size: 1.5rem; 
           display: flex;
           align-items: center;
           justify-content: center;
           height: 100%;
           line-height: 70px;
+        } */
+        
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            font-size: 1.15rem; /* 혹은 1.5rem, 위쪽 코드에 2개가 있어서 어떤것을 따를지 확인 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            line-height: 70px; /* 부모 높이와 동일하게 맞추기 */
         }
 
-        .nav-link {
+/*         .nav-link {
           color: var(--text-primary);
           text-decoration: none;
           font-weight: 600;
@@ -146,10 +190,10 @@
           align-items: center;
           justify-content: center;
           height: 100%;
-          line-height: 70px; /* 추가: 부모 높이와 동일하게 맞추기 */
-        }
+          line-height: 70px; 
+        } */
 
-        .nav-link::after {
+/*         .nav-link::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -160,6 +204,21 @@
             transition: width 0.3s ease;
         }
 
+        .nav-link:hover::after {
+            width: 100%;
+        } */
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #c7bfff, #e6d6ff);
+            transition: width 0.3s ease;
+        }
+        
         .nav-link:hover::after {
             width: 100%;
         }
