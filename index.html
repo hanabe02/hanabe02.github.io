@@ -94,7 +94,7 @@
         
         .nav {
             display: flex;
-            justify-content: space-between; /* 로고와 링크 그룹을 양 끝으로 벌림 */
+            justify-content: flex-start; /* 로고와 링크 그룹을 양 끝으로 벌림 */
             align-items: center;
             margin-top: 20px;
             width: 100vw;
@@ -111,6 +111,7 @@
             /* height: 100%; 이건 필요하면 유지, 아니면 제거 */
             align-items: center; /* 세로 중앙 정렬 */
             /* justify-content: center; 이건 제거, .nav에서 space-between으로 처리 */
+            margin-left: auto;
         }
 
 /*         .nav-section.center {
